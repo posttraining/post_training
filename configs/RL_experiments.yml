@@ -1,0 +1,36 @@
+# General experiment settings
+num_trials: 1  # Number of trials per experiment for robustness
+
+# Put here the name of datasets or the path of a csv file
+data_name: 
+  - ETTh1
+# Model configurations
+# Put here the name of a model
+models:
+  - "DLinear"
+  # - "PatchTST"
+
+# Hyperparameters
+window_sizes: 
+  - 96
+
+prediction_horizons: 
+  - 96
+
+batch_sizes: 
+  - 32
+
+# Additional model parameters
+label_len: 10
+n_samples: 100
+feature_size: 7
+model_file: False
+
+# Training options
+training: True  # Enable or disable training
+human_feedback: False  # Toggle human feedback during experiments
+
+methods:
+  - "UCB"
+  - "RL"
+  - "Genetic"

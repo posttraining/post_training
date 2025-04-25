@@ -1,0 +1,6 @@
+# compile files
+*.pyc
+*.pdf
+*.pth
+*.txt
+*.npy

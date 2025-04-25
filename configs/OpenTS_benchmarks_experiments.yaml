@@ -1,0 +1,49 @@
+# General experiment settings
+num_trials: 1  # Number of trials per experiment for robustness
+
+# Put here the name of datasets or the path of a csv file
+data_name: 
+  # - "data/dominick_dataset_100115.csv"  # Dominick
+  - "data/human_1.csv"  # Human
+  # - "data/kdd_cup_2018_dataset_without_missing_values_1.csv"  # KDD
+  # - "data/Nature_1.csv"  # Nature
+  # - "data/NASDAQ.csv"  # NASDAQ
+  # - "data/pedestrian_counts_dataset_41.csv"  # Pedestrian
+  # - "data/tourism_monthly_dataset_14.csv"  # Tourism
+  # - "data/vehicle_trips_dataset_without_missing_values_1.csv"  # Vehicle trips
+  # - "data/weather_dataset_142.csv"  # Weather
+
+# Model configurations
+# Put here the name of a model
+models:
+  # - "Autoformer"
+  # - "Crossformer"
+  # - "iTransformer"
+  - "PatchTST"
+  # - "SegRNN"
+  # - "Informer"
+
+# Hyperparameters
+window_sizes: 
+  - 96
+
+prediction_horizons: 
+  - 12
+  - 24
+  - 48
+
+batch_sizes: 
+  - 32
+
+# Additional model parameters
+label_len: 10
+n_samples: 100
+feature_size: 7
+model_file: False
+
+# Training options
+training: True  # Enable or disable training
+human_feedback: False  # Toggle human feedback during experiments
+
+methods: 
+  - "UCB"
