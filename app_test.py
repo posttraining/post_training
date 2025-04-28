@@ -43,7 +43,7 @@ def configure_sidebar():
  
     window_size = st.sidebar.number_input("Sliding Window Size (T)", min_value=1, max_value=100, value=96)
     prediction_horizon = st.sidebar.number_input("Prediction Horizon (T)", min_value=1, max_value=200, value=144)
-    method = st.sidebar.selectbox("Method", ["UCB", "RL", "Genetic"])    
+    method = st.sidebar.selectbox("Method", ["random", "SH-HPO", "Genetic", "PPO"])    
     explore_button = st.sidebar.button("Explore Instructions")
     return train_file, model_name, window_size, prediction_horizon, method, model_file, explore_button
 
@@ -67,7 +67,7 @@ def main():
             config = {"data_name": save_uploaded_file(train_file), "models": model_name,
                       "num_trials": 1, "window_size": window_size, "prediction_horizon": prediction_horizon,
                       "label_len": 0, "n_samples": 100, "feature_size":7, "model_file": model_file,
-                      "batch_size": 32, "method": method}
+                      "batch_size": 32, "method": method, "n-jobs": 7, "episodes": 5}
             train_loader, val_loader, test_loader = load_data_sota(config)
             exp, args = define_model(train_loader, val_loader, test_loader, config)
             exp.train(args)
