@@ -67,7 +67,7 @@ def main():
             config = {"data_name": save_uploaded_file(train_file), "models": model_name,
                       "num_trials": 1, "window_size": window_size, "prediction_horizon": prediction_horizon,
                       "label_len": 0, "n_samples": 100, "feature_size":7, "model_file": model_file,
-                      "batch_size": 32, "method": method, "n-jobs": 7, "episodes": 5}
+                      "batch_size": 32, "method": method, "n_jobs": 7, "episodes": 5}
             train_loader, val_loader, test_loader = load_data_sota(config)
             exp, args = define_model(train_loader, val_loader, test_loader, config)
             exp.train(args)
