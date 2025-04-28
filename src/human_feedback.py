@@ -72,13 +72,13 @@ def build_feedback_prompt(feedback):
 def get_generated_code(feedback):
     client = OpenAI(
     base_url='https://api.deepseek.com',
-    api_key='sk-2054088250254f14bb701e2e45148af4',
+    api_key="sk-2054088250254f14bb701e2e45148af4",
 )
     prompt = build_feedback_prompt(feedback)
 
     # Call OpenAI API to generate the code
     response = client.chat.completions.create(
-        model="deepseek-chat",  # Update to the appropriate model
+        model='deepseek-chat',  # Update to the appropriate model
         messages=[{'role': 'user', 'content': prompt}],
         temperature=0.5,  # Adjust temperature for creativity level
         max_tokens=500,
