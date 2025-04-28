@@ -176,7 +176,7 @@ def handle_feedback(
     true: Optional[np.ndarray] = None,
     batch_x: Optional[np.ndarray] = None,
     streamlit: bool = False,
-    method: str = 'UCB',
+    method: str = 'random',
     feedback_text: str = None,
     ):
 
@@ -220,28 +220,28 @@ def handle_feedback(
     if method == 'random':
         rl_algorithm = contextual_bandit_random
 
-    elif args.method == "SR-HPO":
+    elif method == "SR-HPO":
         rl_algorithm = ContextualBanditSuccessiveRejects(n_function_types=len(function_types),
                                                          n_iterations=N_ITERATIONS,
                                                          max_iter_hyperopt=MAX_ITER_HYPEROPT,
                                                          n_jobs=args.n_jobs,
                                                          )
 
-    elif args.method == "U-HPO":
+    elif method == "U-HPO":
         rl_algorithm = ContextualBanditUniformBAI(n_function_types=len(function_types),
                                                   n_iterations=N_ITERATIONS,
                                                   max_iter_hyperopt=MAX_ITER_HYPEROPT,
                                                   n_jobs=args.n_jobs,
                                                   )
 
-    elif args.method == "SH-HPO":
+    elif method == "SH-HPO":
         rl_algorithm = ContextualBanditSuccessiveHalving(n_function_types=len(function_types),
                                                          n_iterations=N_ITERATIONS,
                                                          max_iter_hyperopt=MAX_ITER_HYPEROPT,
                                                          n_jobs=args.n_jobs,
                                                          )
 
-    elif args.method == "LUCB-HPO":
+    elif method == "LUCB-HPO":
         rl_algorithm = ContextualBanditLUCB(n_function_types=len(function_types),
                                             n_iterations=N_ITERATIONS,
                                             max_iter_hyperopt=MAX_ITER_HYPEROPT,
