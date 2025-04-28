@@ -72,7 +72,7 @@ def build_feedback_prompt(feedback):
 def get_generated_code(feedback):
     client = OpenAI(
     base_url='https://api.deepseek.com',
-    api_key="sk-2054088250254f14bb701e2e45148af4",
+    api_key="sk-799437a080f04354bc1dd27b4a6c823f",
 )
     prompt = build_feedback_prompt(feedback)
 
