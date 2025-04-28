@@ -23,6 +23,8 @@ import numpy as np
 
 warnings.filterwarnings('ignore')
 
+torch.classes.__path__ = []
+
 
 class Exp_Main(Exp_Basic):
     def __init__(self, args):
