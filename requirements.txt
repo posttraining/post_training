@@ -12,3 +12,4 @@ seaborn
 bayesian-optimization
 stable-baselines3
 openai
+reformer-pytorch
