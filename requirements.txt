@@ -6,3 +6,4 @@ torchmetrics
 pytorch-lightning
 accelerate
 transformers
+sklearn
