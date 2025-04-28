@@ -7,3 +7,4 @@ pytorch-lightning
 accelerate
 transformers
 scikit-learn
+matplotlib
