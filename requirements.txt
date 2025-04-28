@@ -1,5 +1,13 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==1.13.0+cpu
+torchvision==0.14.0+cpu
+torchmetrics
+pytorch-lightning==1.9.0
+accelerate==0.21.0
+transformers==4.30.0
+
 absl-py
-accelerate
 aiohttp
 alembic
 altair
@@ -53,7 +61,6 @@ jsonschema
 kiwisolver
 langcodes
 lightgbm
-lightning
 matplotlib
 mdit-py-plugins
 memray
@@ -78,7 +85,6 @@ pydantic
 pyparsing
 pytesseract
 pytest
-pytorch-lightning
 pytorch-metric-learning
 pyyaml
 ray
@@ -96,9 +102,5 @@ srsly
 streamlit
 tensorboard
 tensorboardX
-torch==1.13.0+cpu
-torchmetrics
-torchvision==0.14.0+cpu
-transformers
 tqdm
 xgboost
