@@ -9,3 +9,4 @@ transformers
 scikit-learn
 matplotlib
 seaborn
+bayesian-optimization
