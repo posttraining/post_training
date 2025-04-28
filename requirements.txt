@@ -10,3 +10,4 @@ scikit-learn
 matplotlib
 seaborn
 bayesian-optimization
+stable-baselines3
