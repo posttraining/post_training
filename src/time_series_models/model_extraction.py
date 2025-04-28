@@ -47,11 +47,11 @@ class Args:
 
         # Data related arguments
         self.data = kwargs.get('data', "custom")  # Default to custom data type
-        self.root_path = kwargs.get('root_path', "/data/")  # XXX
+        self.root_path = kwargs.get('root_path', "./data/")  # XXX
         self.features = kwargs.get('features', "M")
         self.target = kwargs.get('target', "OT")
         self.freq = kwargs.get('freq', "h")
-        self.checkpoints = kwargs.get('checkpoints', "/checkpoints/")  # XXX
+        self.checkpoints = kwargs.get('checkpoints', "./checkpoints/")  # XXX
 
         # Model-related parameters
         self.label_len = kwargs.get('label_len', 0)  # Default label length
