@@ -71,7 +71,8 @@ def build_feedback_prompt(feedback):
 
 def get_generated_code(feedback):
     client = OpenAI(
-    base_url='http://api.openai.ukrc.huawei.com:4000/v1',  # Update to your base URL
+    # base_url='http://api.openai.ukrc.huawei.com:4000/v1',  # Update to your base URL
+    base_url='https://dashscope-intl.aliyuncs.com/compatible-mode/v1'
     api_key='sk-1234',
 )
     prompt = build_feedback_prompt(feedback)
