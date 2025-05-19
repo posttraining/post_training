@@ -44,7 +44,7 @@ To execute the post-training script, use the following command:
 python main.py --config configs/default_config.yaml --train_path <path_to_train_data> --model <model_name> --window_size <window_size> --prediction_horizon <prediction_horizon> --batch_size <batch_size> --method <rl_method>
 ```
 We support SOTA time series models including PatchTST, SegRNN etc, for the full list of supporting models, please check the list under section "Supported Time Series Models". <br>
-We support reinforcement learning and contextual bandit methods includes: random, SR-HPO, U-HPO, SH-HPO, PPO and Genetic. *(are we planning to keep LUCB-HPO? It seems to be allowed as a valid option for method but does not apper in the ValueError message.)*
+We support reinforcement learning and contextual bandit methods includes: random, SR-HPO, U-HPO, SH-HPO, PPO and Genetic.
 
 ## Running the Streamlit App
 To launch the Streamlit interface:
@@ -112,5 +112,3 @@ This project is released under the MIT License.
 
 ## Contact
 For any inquiries or discussions, please contact the repository maintainer.
-
-# post_training_app
