@@ -9,7 +9,6 @@ reformer-pytorch==1.4.4
 scikit-learn==1.5.2
 seaborn==0.13.2
 stable-baselines3==2.5.0
-torch==2.5.1
 torchmetrics==1.2.1
 torchvision==0.20.1
 transformers==4.40.1
