@@ -1,6 +1,6 @@
 # Time Series Model Post-Training and Human Feedback Exploration
 
-This repository provides a framework to apply post-training exploration on any existing time series model. It allows users to fine-tune model predictions through human feedback and a **contextual bandit** approach. This dynamic feedback loop enhances the model’s adaptability and improves prediction accuracy over time.
+This repository provides a framework to apply post-training exploration on any existing time series model. It allows users to fine-tune model predictions through human feedback and a **reinforcement learning** or a **contextual bandit** approach. This dynamic feedback loop enhances the model’s adaptability and improves prediction accuracy over time.
 
 ## Project Goal
 
@@ -22,22 +22,30 @@ The primary objective of this project is to create an interactive environment fo
 ```bash
 cd post_training_forecasting_official
 ```
-## Set Up the Environment
+### Set Up the Environment
 Ensure you have Python 3.7+ and conda installed. Then, install the necessary dependencies:
 ```bash
 conda env create -f environment.yml
 ```
+one can also set-up the environment using:
+```bash
+pip install -r requirements.txt
+```
 
-## Activate the environment:
+### Activate the environment:
 ```bash
 conda activate post_training_env
 ```
+
 ## Usage
 Running the Post-Training Process
 To execute the post-training script, use the following command:
 ```bash
 python main.py --config configs/default_config.yaml --train_path <path_to_train_data> --model <model_name> --window_size <window_size> --prediction_horizon <prediction_horizon> --batch_size <batch_size> --method <rl_method>
 ```
+We support SOTA time series models including PatchTST, SegRNN etc, for the full list of supporting models, please check the list under section "Supported Time Series Models". <br>
+We support reinforcement learning and contextual bandit methods includes: random, SR-HPO, U-HPO, SH-HPO, PPO and Genetic. *(are we planning to keep LUCB-HPO? It seems to be allowed as a valid option for method but does not apper in the ValueError message.)*
+
 ## Running the Streamlit App
 To launch the Streamlit interface:
 
@@ -50,6 +58,13 @@ To execute batch experiments using the predefined configurations:
 ```bash
 python run_experiments.py --config configs/experiments_config.yaml
 ```
+
+### Supported Time Series Models
+
+Transformer-backbone: TimesNet; Autoformer; Transformer; Nonstationary_Transformer; FEDformer; Informer; Reformer; ETSformer; PatchTST; Pyraformer; Crossformer; iTransformer.<br>
+MLP-backbone: Koopa, TiDE, FreTS, TimeMixer, TSMixer.<br>
+Other: LightTS, MICN, FiLM, SegRNN.
+
 ## Folder Structure
 ```bash
 post_training/
@@ -73,27 +88,29 @@ post_training/
     ├── results_handler.py   # Managing experiment results
     └── utils.py             # Helper functions
 ```
-#### Workflow Overview
-## Model Initialization
+## Workflow Overview
+### Model Initialization
 
 Load data and initialize the selected time series model.
-## Exploration Phase
+### Exploration Phase
 
 Apply different post-training actions (e.g., adjusting amplitude, trends, etc.).
 Use the contextual bandit algorithm to optimize predictions dynamically.
-## Human Feedback Integration
+### Human Feedback Integration
 
 Users provide corrective actions based on observed model performance.
 Example feedback: "Increase the prediction amplitude by 5-10%."
-## Evaluation and Visualization
+### Evaluation and Visualization
 
 Compare model performance before and after feedback.
 Generate plots and metrics for analysis.
 Contributions
 Feel free to contribute by submitting pull requests or opening issues for bugs and feature suggestions.
 
-#### License
+## License
 This project is released under the MIT License.
 
-#### Contact
-For any inquiries or discussions, please contact the repository maintainer.# post_training_app
+## Contact
+For any inquiries or discussions, please contact the repository maintainer.
+
+# post_training_app
