@@ -34,8 +34,8 @@ def configure_sidebar():
     train_file = st.sidebar.file_uploader("Upload Training CSV", type=["csv"], key="train_file")
     model_name = st.sidebar.selectbox(
             "Model Name", [
-                "Crossformer", "DLinear", "ETSformer", "FEDformer","FiLM", "FreTS", "Informer", "Koopa", 
-                "LightTS", "MICN", "Nonstationnary_Transformer", "PatchTST", "Pyraformer", "Reformer", "SegRNN", 
+                "DLinear", "PatchTST", "Crossformer" , "ETSformer", "FEDformer","FiLM", "FreTS", "Informer", "Koopa", 
+                "LightTS", "MICN", "Nonstationnary_Transformer", "Pyraformer", "Reformer", "SegRNN", 
                 "TSMixer", "TiDE", "TimeMixer", "Transformer", "TimesNet", "iTransformer"
             ], index=0
         )   
